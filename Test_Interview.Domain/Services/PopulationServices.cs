@@ -4,7 +4,7 @@ using Test_InterView.Domain.Interface;
 using Test_InterView.Domain.ModelEntities;
 using Test_Interview.Infrastructure.DataAccess;
 
-namespace Test_InterView.Services
+namespace Test_InterView.Domain.Services
 {
     #region PopulationServices
     /// <summary>

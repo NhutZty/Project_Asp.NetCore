@@ -15,10 +15,6 @@
         /// </summary>
         public const string SQLITE_CONNECTION_STRING = "sqlite";
         /// <summary>
-        /// Log config file Const: "log4net.config"
-        /// </summary>
-        public const string LOG_CONFIG_FILE = @"log4net.config";
-        /// <summary>
         /// DateTime Format: "yyyyMMdd"
         /// </summary>
         public const string YYYYMMDD_FORMAT = "yyyyMMdd";

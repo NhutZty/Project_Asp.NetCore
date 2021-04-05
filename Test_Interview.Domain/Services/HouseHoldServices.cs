@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using Test_InterView.Domain.Interface;
 using Test_InterView.Domain.ModelEntities;
 using Test_Interview.Infrastructure.DataAccess;
-using Test_InterView.Infrastructure.Entities;
+using Test_InterView.Infrastructure.DataAccess.Entities;
 
-namespace Test_InterView.Services
+namespace Test_InterView.Domain.Services
 {
     #region HouseHoldServices
     /// <summary>

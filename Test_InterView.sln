@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_InterView", "Test_InterView\Test_InterView.csproj", "{59C1F9A8-2088-40DE-9550-7D9E3CEF869D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Interview.Domain", "Test_Interview.Domain\Test_Interview.Domain.csproj", "{90056750-6D0A-4523-833D-9C37EBEB3C2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_Interview.Domain", "Test_Interview.Domain\Test_Interview.Domain.csproj", "{90056750-6D0A-4523-833D-9C37EBEB3C2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test_Interview.Infrastructure", "Test_Interview.Infrastructure\Test_Interview.Infrastructure.csproj", "{442D2092-791F-4891-A791-A6A69497EDAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_Interview.Infrastructure", "Test_Interview.Infrastructure\Test_Interview.Infrastructure.csproj", "{442D2092-791F-4891-A791-A6A69497EDAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

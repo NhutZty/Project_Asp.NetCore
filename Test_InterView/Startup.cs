@@ -1,5 +1,5 @@
 using Test_InterView.Common;
-using Test_InterView.Services;
+using Test_InterView.Domain.Services;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

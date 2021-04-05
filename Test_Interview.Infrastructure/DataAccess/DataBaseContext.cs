@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Test_InterView.Infrastructure.Entities;
+using Test_InterView.Infrastructure.DataAccess.Entities;
 
 namespace Test_Interview.Infrastructure.DataAccess
 {
