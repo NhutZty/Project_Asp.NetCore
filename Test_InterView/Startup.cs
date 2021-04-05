@@ -1,13 +1,14 @@
 using Test_InterView.Common;
 using Test_InterView.Services;
-using Test_InterView.DataAccess;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
+using Test_InterView.Domain.Interface;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Test_Interview.Infrastructure.DataAccess;
 
 namespace Test_InterView
 {

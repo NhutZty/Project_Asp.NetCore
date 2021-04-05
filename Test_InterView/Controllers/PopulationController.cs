@@ -1,9 +1,9 @@
-﻿using Test_InterView.Model;
-using Test_InterView.Common;
-using Test_InterView.Services;
+﻿using Test_InterView.Common;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
+using Test_InterView.Domain.Interface;
+using Test_InterView.Domain.ModelEntities;
 
 namespace Test_InterView.Controllers
 {
