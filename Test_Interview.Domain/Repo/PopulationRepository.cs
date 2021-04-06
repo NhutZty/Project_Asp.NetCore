@@ -1,35 +1,34 @@
 ﻿using System.Linq;
 using System.Collections.Generic;
-using Test_InterView.Domain.Interface;
+using Test_Interview.Domain.Interface;
 using Test_InterView.Domain.ModelEntities;
 using Test_Interview.Infrastructure.DataAccess;
-using Test_InterView.Infrastructure.DataAccess.Entities;
 
-namespace Test_InterView.Domain.Services
+namespace Test_Interview.Domain.Repo
 {
-    #region HouseHoldServices
+    #region PopulationRepository
     /// <summary>
-    /// HouseHoldServices Class
+    /// PopulationRepository Class
     /// </summary>
-    public class HouseHoldServices : IHouseHoldServices
+    public class PopulationRepository : IPopulationRepository
     {
         public readonly DataBaseContext context;
-        public HouseHoldServices(DataBaseContext context)
+        public PopulationRepository(DataBaseContext context)
         {
             this.context = context;
         }
 
-        #region GetHouseHolds
+        #region GetPopulation
         /// <summary>
-        /// GetHouseHolds
-        /// Retrieve HouseHold data from state list
+        /// GetPopulation
+        /// Retrieve population data from state list
         /// </summary>
         /// <param name="stateList">list of state</param>
-        /// <returns>list of HouseHoldModels</returns>
-        public List<HouseHoldModels> GetHouseHolds(List<int> stateList)
+        /// <returns>list of PopulationModel</returns>
+        public List<PopulationModels> GetPopulation(List<int> stateList)
         {
-            // list of HouseHoldModels
-            List<HouseHoldModels> listHouseHolds = new List<HouseHoldModels>();
+            // list of PopulationModel
+            List<PopulationModels> listPopulation = new List<PopulationModels>();
 
             using (context)
             {
@@ -37,24 +36,23 @@ namespace Test_InterView.Domain.Services
                 {
                     // Look up Actuals table 
                     var resultActual = context.Actuals.Where(x => state == x.State).FirstOrDefault();
-                    var houseHoldModel = new HouseHoldModels();
+                    PopulationModels populationModel = new PopulationModels();
 
                     // If the data is available
                     if (resultActual != null)
                     {
-                        houseHoldModel.State = state;
-                        houseHoldModel.HouseHolds = resultActual.ActualHouseholds;
+                        populationModel.State = state;
+                        populationModel.Population = resultActual.ActualPopulation;
                     }
                     // the data isn't available
                     else
                     {
                         // Look up Estimates table 
-                        List<EstimatesTable> resultEstimates = context.Estimates
-                            .Where(x => state == x.State).ToList();
+                        var resultEstimates = context.Estimates.Where(x => state == x.State).ToList();
                         
-                        houseHoldModel.State = state;
+                        populationModel.State = state;
                         // a sum of the value over all districts for the required state in the Estimates table
-                        houseHoldModel.HouseHolds = resultEstimates.Sum(x => x.EstimatesHouseholds);
+                        populationModel.Population = resultEstimates.Sum(x => x.EstimatesPopulation);
                         // If any input state id is not available
                         if (resultEstimates.Count() == 0)
                         {
@@ -62,13 +60,13 @@ namespace Test_InterView.Domain.Services
                         }
                     }
 
-                    // Add PopulationModel to the list of HouseHoldModels
-                    listHouseHolds.Add(houseHoldModel);
+                    // Add PopulationModel to the list of PopulationModel
+                    listPopulation.Add(populationModel);
                 }
-            }
 
-            // return the value of HouseHold 
-            return listHouseHolds;
+            }
+            // return the value of Population 
+            return listPopulation;
         }
         #endregion
     }

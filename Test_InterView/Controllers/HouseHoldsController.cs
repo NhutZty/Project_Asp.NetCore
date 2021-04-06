@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
-using Test_InterView.Domain.Interface;
 using Test_InterView.Domain.ModelEntities;
+using Test_Interview.Domain.Interface;
+using Test_Interview.Domain;
 
 namespace Test_InterView.Controllers
 {
@@ -15,12 +16,11 @@ namespace Test_InterView.Controllers
     [ApiController]
     public class HouseHoldsController : ControllerBase
     {
-        private readonly IHouseHoldServices _houseHoldServices;
-        public HouseHoldsController(IHouseHoldServices houseHoldServices)
+        private readonly UnitOfWork _unitOfWork;
+        public HouseHoldsController(UnitOfWork unitOfWork)
         {
-            this._houseHoldServices = houseHoldServices;
+            this._unitOfWork = unitOfWork;
         }
-
         #region GetHouseHolds
         /// <summary>
         /// GetHouseHolds
@@ -41,7 +41,7 @@ namespace Test_InterView.Controllers
                 return NotFound();
             }
 
-            List<HouseHoldModels> listHouseHold = _houseHoldServices.GetHouseHolds(numberStates);
+            List<HouseHoldModels> listHouseHold = _unitOfWork.HouseHoldRepository.GetHouseHolds(numberStates);
             // the data is available
             if (listHouseHold.Count == 0)
             {

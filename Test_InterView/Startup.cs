@@ -1,11 +1,10 @@
 using Test_InterView.Common;
-using Test_InterView.Domain.Services;
+using Test_Interview.Domain;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-using Test_InterView.Domain.Interface;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Test_Interview.Infrastructure.DataAccess;
@@ -24,10 +23,9 @@ namespace Test_InterView
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IPopulationServices, PopulationServices>();
-            services.AddTransient<IHouseHoldServices, HouseHoldServices>();
             services.AddDbContext<DataBaseContext>(options => 
                 options.UseSqlite(Configuration.GetConnectionString(Const.SQLITE_CONNECTION_STRING)));
+            services.AddScoped(ctx => new UnitOfWork(ctx.GetRequiredService<DataBaseContext>()));
             services.AddControllers();
         }
 

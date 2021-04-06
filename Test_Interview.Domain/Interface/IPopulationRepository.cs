@@ -1,13 +1,13 @@
 ﻿using Test_InterView.Domain.ModelEntities;
 using System.Collections.Generic;
 
-namespace Test_InterView.Domain.Interface
+namespace Test_Interview.Domain.Interface
 {
-    #region IPopulationServices
+    #region IPopulationRepository
     /// <summary>
-    /// IPopulationServices Interface
+    /// IPopulationRepository Interface
     /// </summary>
-    public interface IPopulationServices
+    public interface IPopulationRepository
     {
         List<PopulationModels> GetPopulation(List<int> stateList);
     }

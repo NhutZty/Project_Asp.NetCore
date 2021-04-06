@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
-using Test_InterView.Domain.Interface;
 using Test_InterView.Domain.ModelEntities;
+using Test_Interview.Domain.Interface;
+using Test_Interview.Domain;
 
 namespace Test_InterView.Controllers
 {
@@ -15,10 +16,10 @@ namespace Test_InterView.Controllers
     [ApiController]
     public class PopulationController : ControllerBase
     {
-        private readonly IPopulationServices _populationServices;
-        public PopulationController(IPopulationServices populationServices)
+        private readonly UnitOfWork _unitOfWork;
+        public PopulationController(UnitOfWork unitOfWork)
         {
-            this._populationServices = populationServices;
+            this._unitOfWork = unitOfWork;
         }
 
         #region GetPopulation
@@ -40,7 +41,7 @@ namespace Test_InterView.Controllers
                 return NotFound();
             }
 
-            List<PopulationModels> listPopulation = _populationServices.GetPopulation(numberStates);
+            List<PopulationModels> listPopulation = _unitOfWork.PopulationRepository.GetPopulation(numberStates);
             // the data is available
             if (listPopulation.Count == 0)
             {

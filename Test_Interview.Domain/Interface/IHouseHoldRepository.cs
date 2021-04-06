@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using Test_InterView.Domain.ModelEntities;
 
-namespace Test_InterView.Domain.Interface
+namespace Test_Interview.Domain.Interface
 {
-    #region IHouseHoldServices
+    #region IHouseHoldRepository
     /// <summary>
-    /// IHouseHoldServices Interface
+    /// IHouseHoldRepository Interface
     /// </summary>
-    public interface IHouseHoldServices
+    public interface IHouseHoldRepository
     {
         List<HouseHoldModels> GetHouseHolds(List<int> stateList);
     }

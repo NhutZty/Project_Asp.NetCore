@@ -1,8 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="UnitOfWork.cs~RF2849d5c.TMP" />
+  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Test_Interview.Infrastructure\Test_Interview.Infrastructure.csproj" />
