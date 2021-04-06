@@ -13,6 +13,7 @@ namespace Test_Interview.Domain
         private DataBaseContext _context = null;
         private HouseHoldRepository _houseHoldRepository = null;
         private PopulationRepository _populationRepository = null;
+        
         public UnitOfWork(DataBaseContext context)
         {
             this._context = context;
