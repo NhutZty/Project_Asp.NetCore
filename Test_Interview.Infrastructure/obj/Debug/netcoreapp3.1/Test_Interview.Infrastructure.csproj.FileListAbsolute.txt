@@ -1,9 +1,0 @@
-E:\GitHubProject\Project_Asp.NetCore\Test_Interview.Infrastructure\obj\Debug\netcoreapp3.1\Test_Interview.Infrastructure.AssemblyInfoInputs.cache
-E:\GitHubProject\Project_Asp.NetCore\Test_Interview.Infrastructure\obj\Debug\netcoreapp3.1\Test_Interview.Infrastructure.AssemblyInfo.cs
-E:\GitHubProject\Project_Asp.NetCore\Test_Interview.Infrastructure\obj\Debug\netcoreapp3.1\Test_Interview.Infrastructure.csproj.CoreCompileInputs.cache
-E:\GitHubProject\Project_Asp.NetCore\Test_Interview.Infrastructure\bin\Debug\netcoreapp3.1\Test_Interview.Infrastructure.deps.json
-E:\GitHubProject\Project_Asp.NetCore\Test_Interview.Infrastructure\bin\Debug\netcoreapp3.1\Test_Interview.Infrastructure.dll
-E:\GitHubProject\Project_Asp.NetCore\Test_Interview.Infrastructure\bin\Debug\netcoreapp3.1\Test_Interview.Infrastructure.pdb
-E:\GitHubProject\Project_Asp.NetCore\Test_Interview.Infrastructure\obj\Debug\netcoreapp3.1\Test_Interview.Infrastructure.dll
-E:\GitHubProject\Project_Asp.NetCore\Test_Interview.Infrastructure\obj\Debug\netcoreapp3.1\Test_Interview.Infrastructure.pdb
-E:\GitHubProject\Project_Asp.NetCore\Test_Interview.Infrastructure\obj\Debug\netcoreapp3.1\Test_Interview.Infrastructure.csprojAssemblyReference.cache
