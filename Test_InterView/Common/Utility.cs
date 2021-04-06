@@ -17,6 +17,13 @@ namespace Test_InterView.Common
         public static List<int> GetListStateFromQueryString(string queryString)
         {
             List<int> numberStates = new List<int>();
+            
+            // Query parameter state does not exist
+            if (queryString == null)
+            {
+                return null;
+            }
+            
             // separate the string state with comma
             string[] listStateString = queryString.Split(Const.COMMA);
             
